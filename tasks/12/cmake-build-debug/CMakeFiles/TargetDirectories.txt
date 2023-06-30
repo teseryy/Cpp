@@ -1,0 +1,3 @@
+/home/teseryy/Programming/c++/exam/6/cmake-build-debug/CMakeFiles/6.dir
+/home/teseryy/Programming/c++/exam/6/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/teseryy/Programming/c++/exam/6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
