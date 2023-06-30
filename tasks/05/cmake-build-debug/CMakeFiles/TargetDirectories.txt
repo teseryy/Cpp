@@ -1,0 +1,3 @@
+/home/teseryy/Programming/c++/PA2/sandadan/hw05/cmake-build-debug/CMakeFiles/hw05.dir
+/home/teseryy/Programming/c++/PA2/sandadan/hw05/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/teseryy/Programming/c++/PA2/sandadan/hw05/cmake-build-debug/CMakeFiles/rebuild_cache.dir
