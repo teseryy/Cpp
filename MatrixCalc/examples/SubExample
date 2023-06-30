@@ -1,0 +1,6 @@
+A = [[2, 3], [4, 6]]
+A PRINT
+B = [[1, 2], [3, 5]]
+B PRINT
+Res = A B SUB
+Res PRINT

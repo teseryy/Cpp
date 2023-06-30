@@ -1,0 +1,6 @@
+X = [[1, 7], [3, 2]]  DET 
+Y SCAN
+Z = Y [[1, 0], [0, 1]] ADD X MUL
+A = Z GAUSS
+A PRINT
+
