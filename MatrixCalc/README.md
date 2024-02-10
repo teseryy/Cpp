@@ -1,66 +1,66 @@
-Задача - создать калькулятор для работы с матрицами. Отдельные матрицы и результаты операций можно хранить в переменных и использовать эти переменные в дальнейших вычислениях.
+The task is to create a calculator for working with matrices. Separate matrices and results of operations can be stored in variables and these variables can be used in further calculations.
 
-Калькулятор реализует следующие функциональные возможности:
+The calculator implements the following functionalities:
 
-    1.Работа с матрицами любого размера (загрузка и перечисление переменных).
+    1.Work with matrices of any size (loading and enumeration of variables).
 
-    2.Основные операции: сложение, вычитание, умножение и транспонирование.
+    2.Basic operations: addition, subtraction, multiplication and transpose.
 
-    3.Объединение и обрезка матриц.
+    3.Merging and trimming of matrices.
 
-    4.Вычисление обратной матрицы для квадратных матриц.
+    4.Computation of inverse matrix for square matrices.
 
-    5.Функции для вычисления детерминанта, определения ранга и выполнения метода исключения Гаусса.
+    5.Functions for calculating determinant, determining rank and performing Gauss elimination method.
 
-    6.Состояние калькулятора (т.е. его переменные) может быть сохранено в текстовом файле. Также возможно восстановление этого состояния из файла.
+    6.The state of the calculator (i.e. its variables) can be saved in a text file. It is also possible to restore this state from the file.
 
-    7.Хранение в переменных (и в файле) экономит память. Когда переменная хранится в памяти, определяется тип матрицы. Калькулятор различает разреженные матрицы и 
-      плотными матрицами.
+    7.Storing in variables (and in a file) saves memory. When a variable is stored in memory, the type of matrix is determined. The calculator distinguishes between sparse matrices and 
+      dense matrices.
 
-Приложение обрабатывает выражения в постфиксной нотации, например, A = B C ADD.
+The application handles expressions in postfix notation, such as A = B C ADD.
 
-Для работы с калькулятором используются следующие команды :
-<filename> IMPORT - импортирует матрицу (или список выражений) из файла <filename>, 
-<Matrix> SCAN - ввод матрицы <Matrix> от пользователя, 
-<PName> = <список операций (или значение матрицы)> - записывает результат операций в переменную, 
-<fMatrix> <sMatrix> ADD - возвращает результат сложения двух матриц <fMatrix> и <sMatrix>, 
-<fMatrix> <sMatrix> SUB - возвращает результат разности двух матриц <fMatrix> и <sMatrix>, 
-<fMatrix> <sMatrix> MULM - возвращает результат произведения <fMatrix> и <sMatrix>,
-<fMatrix> <number(или числовая переменная)> MULN - возвращает результат произведения <fMatrix> и <number>,
-<Матрица> TRANSP - возвращает транспонированную матрицу <Матрица>, 
-<fMatrix> <sMatrix> ROWS(COLS) CONC - объединяет матрицы <fMatrix> и <sMatrix> по строкам (столбцам), 
-<Matrix> (<startRow>, <endRow>, <startColumn>, <endColumn>) SLICE - обрезает матрицу <Matrix> до указанных параметров, 
-<Matrix> INVERSE - возвращает обратную матрицу для квадратной матрицы <Matrix>, 
-<Matrix> DET - возвращает детерминант матрицы <Matrix>, 
-<Matrix> RANK - возвращает ранг матрицы <Matrix>, 
-<Matrix> GAUSS - возвращает матрицу <Matrix>, записанную в верхней треугольной форме, 
-<Matrix> PRINT - выводит матрицу <Matrix> на консоль, 
-<filename> EXPORT - записывает переменные в файл <filename>. 
+The following commands are used to work with the calculator :
+<filename> IMPORT - imports a matrix (or list of expressions) from the <filename> file, 
+<Matrix> SCAN - inputs a <Matrix> matrix from the user, 
+<PName> = <list of operations (or matrix value)> - writes the result of operations to a variable, 
+<fMatrix> <sMatrix> ADD - returns the result of adding two matrices <fMatrix> and <sMatrix>, 
+<fMatrix> <sMatrix> SUB - returns the result of the difference of two matrices <fMatrix> and <sMatrix>, 
+<fMatrix> <sMatrix> MULM - returns the result of the product of <fMatrix> and <sMatrix>,
+<fMatrix> <number(or numeric variable)> MULN - returns the result of the product of <fMatrix> and <number>,
+<fMatrix> TRANSP - returns the transposed matrix <fMatrix>, 
+<fMatrix> <sMatrix> ROWS(COLS) CONC - combines matrices <fMatrix> and <sMatrix> by rows (columns), 
+<Matrix> (<startRow>, <endRow>, <startColumn>, <endColumn>) SLICE - trims the <Matrix> matrix to the specified parameters, 
+<Matrix> INVERSE - returns the inverse matrix for a square matrix <Matrix>, 
+<Matrix> DET - returns the determinant of the <Matrix> matrix, 
+<Matrix> RANK - returns the rank of the matrix <Matrix>, 
+<Matrix> GAUSS - returns the matrix <Matrix> written in upper triangular form, 
+<Matrix> PRINT - outputs the <Matrix> matrix to the console, 
+<filename> EXPORT - writes variables to the <filename> file. 
 
-Пример использования команды CONC:
-A = B C ROWS CONC //- (3x3 и 3x3 -> 6x3) 
-X = Y Z COLS CONC //- (3x3 и 3x3 -> 3x6)
+Example of using the CONC command:
+A = B C ROWS CONC //- (3x3 and 3x3 -> 6x3) 
+X = Y Z COLS CONC //- (3x3 and 3x3 -> 3x6)
 
-Имя переменной может быть только строкой, начинающейся с буквы. Строка может содержать такие символы, как буквы, цифры и '_'.
+A variable name can only be a string starting with a letter. The string can contain characters such as letters, numbers and '_'.
 
-Формат входной матрицы должен быть строго следующим [[num1, num2, ...], [num3, num4, ...], ...], где "num" - это число типа double(integer), а "..." представляет собой 
-последовательность чисел (строк). 
+The format of the input matrix must be strictly as follows [[num1, num2, ...], [num3, num4, ...], ...], where "num" is a number of double(integer) type and "..." represents a sequence of numbers (strings). 
+sequence of numbers (strings). 
 
-Каждая входная строка представляет собой последовательность операций, которые необходимо выполнить, результат этих операций хранится во временном стеке, который очищается после обработки строки, если только результат не хранится в переменной с помощью операции "=". Если такая переменная уже существует, она будет перезаписана. 
+Each input string represents a sequence of operations to be performed, the result of these operations is stored in a temporary stack, which is cleared after the string is processed, unless the result is stored in a variable using the "=" operation. If such a variable already exists, it will be overwritten. 
 
-Вводы должны выполняться точно так, как описано выше. В противном случае команда не будет обработана, а пользователю будет выдано сообщение об ошибке.
+Inputs must be executed exactly as described above. Otherwise, the command will not be processed and an error message will be displayed to the user.
 
-Если файл находится не в той же папке, что и исполняемый файл, то при импорте необходимо указать путь.
+If the file is not in the same folder as the executable, the path must be specified when importing.
 
-Запуск программы может выглядеть следующим образом:
-ИМПОРТ памяти
+Running the program may look as follows:
+memory IMPORT
 X = [[1, 7], [3, 2]]  DET 
 Y SCAN 
-// ввод от пользователя ...
+// input from user ...
 Z = Y [[1, 0], [0, 1]] ADD X MUL
 A = Z GAUSS
 A PRINT
-память ЭКСПОРТ
+EXPORT memory
 
-Полиморфизм в основном используется для эффективного хранения матриц. Используются два типа матриц (разреженные и плотные), для которых некоторые алгоритмы 
-реализуются по-разному. Полиморфизм также используется для представления матричных операций с помощью шаблона проектирования Command.
+Polymorphism is mainly used to store matrices efficiently. Two types of matrices (sparse and dense) are used, for which some algorithms are 
+are implemented differently. Polymorphism is also used to represent matrix operations using the Command design pattern.
